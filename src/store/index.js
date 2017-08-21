@@ -15,6 +15,7 @@ import router from '@/router'
  * -----------------------------------------------------------------------------------------------------------
  */
 import city from '@/components/city/store'
+import driver from '@/components/driver/store'
 
 /**
  * -----------------------------------------------------------------------------------------------------------
@@ -58,7 +59,8 @@ const store = new Vuex.Store({
     isLogged: state => state.logged
   },
   modules: {
-    city
+    city,
+    driver
   },
   plugins: debug ? [createLogger()] : []
 })

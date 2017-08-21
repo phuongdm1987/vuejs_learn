@@ -5,8 +5,8 @@ import {
 
 const getAllCity = ({commit, dispatch}, params) => {
   city.getAllCity(params).then(response => {
-    if (response.code === 200) {
-      commit(GET_ALL_CITY, response.data)
+    if (response.status === 200) {
+      commit(GET_ALL_CITY, response.data.data)
     } else {
       commit(GET_ALL_CITY, [])
     }

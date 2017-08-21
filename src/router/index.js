@@ -1,9 +1,13 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import { concat } from 'lodash'
+
+import auth from './auth'
+
 import Dashboard from '@/components/Dashboard'
 import Login from '@/components/account/Login'
 import Logout from '@/components/account/Logout'
-import auth from './auth'
+import driverRoutes from '@/components/driver/routes'
 
 // configs axios
 import '@/api/config'
@@ -12,7 +16,7 @@ Vue.use(Router)
 
 export default new Router({
   mode: 'history',
-  routes: [
+  routes: concat(
     {
       path: '/',
       name: 'Dashboard',
@@ -29,6 +33,7 @@ export default new Router({
       path: '/login',
       name: 'login',
       component: Login
-    }
-  ]
+    },
+    driverRoutes
+  )
 })

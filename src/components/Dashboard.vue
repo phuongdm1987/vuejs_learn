@@ -30,7 +30,6 @@
 
 <script>
 import { mapActions, mapGetters } from 'vuex'
-import { getAllCity } from '@/api/city'
 export default {
   name: 'dashboard',
   data () {
@@ -58,7 +57,7 @@ export default {
     }
   },
   mounted () {
-    getAllCity()
+    this.items = this.getAllCity()
   },
   methods: {
     ...mapActions('city', ['getAllCity'])
