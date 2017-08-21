@@ -1,5 +1,6 @@
 <template>
   <v-app toolbar footer fill-height>
+    <!-- menu -->
     <v-navigation-drawer
       persistent
       v-model="drawer"
@@ -7,17 +8,21 @@
     >
       <v-list>
         <v-list-tile router-link to="/">
+          <v-list-tile-action>
+            <v-icon>dashboard</v-icon>
+          </v-list-tile-action>
           <v-list-tile-content>
-            <v-list-tile-title>Dashboard</v-list-tile-title>
+            <v-list-tile-title>{{ $t('menu.dashboard') }}</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
+
         <v-list-group v-for="item in items" :value="item.active" v-bind:key="item.title">
           <v-list-tile slot="item" v-if="">
             <v-list-tile-action>
               <v-icon>{{ item.action }}</v-icon>
             </v-list-tile-action>
             <v-list-tile-content>
-              <v-list-tile-title>{{ item.title }}</v-list-tile-title>
+              <v-list-tile-title>{{ $t(item.title) }}</v-list-tile-title>
             </v-list-tile-content>
             <v-list-tile-action>
               <v-icon>keyboard_arrow_down</v-icon>
@@ -25,35 +30,49 @@
           </v-list-tile>
           <v-list-tile v-for="subItem in item.items" v-bind:key="subItem.title" route-link :to="subItem.action">
             <v-list-tile-content>
-              <v-list-tile-title>{{ subItem.title }}</v-list-tile-title>
+              <v-list-tile-title>{{ $t(subItem.title) }}</v-list-tile-title>
             </v-list-tile-content>
           </v-list-tile>
         </v-list-group>
+
         <v-list-tile router-link to="/logout">
+          <v-list-tile-action>
+            <v-icon>exit_to_app</v-icon>
+          </v-list-tile-action>
           <v-list-tile-content>
-            <v-list-tile-title>Logout</v-list-tile-title>
+            <v-list-tile-title>{{ $t('menu.logout') }}</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
       </v-list>
     </v-navigation-drawer>
+
+    <!-- toolbar -->
     <v-toolbar class="cyan" dark>
+
       <v-toolbar-title>
         <v-toolbar-side-icon @click.stop="drawer = !drawer" class="hidden-md-and-up"></v-toolbar-side-icon>
       </v-toolbar-title>
+
       <v-toolbar-title>
         Learn Vuejs
       </v-toolbar-title>
+
       <v-spacer></v-spacer>
+
       <v-btn-toggle v-bind:items="language_options" v-model="language"></v-btn-toggle>
     </v-toolbar>
+
+    <!-- main content -->
     <main>
       <v-container fluid>
         <router-view></router-view>
       </v-container>
     </main>
+
+    <!-- footer -->
     <v-footer class="cyan" dark>
       <v-spacer></v-spacer>
-      <div>© {{ new Date().getFullYear() }}</div>
+      <div>Henry © {{ new Date().getFullYear() }}</div>
     </v-footer>
   </v-app>
 </template>
@@ -74,12 +93,12 @@ export default {
     items: [
       {
         action: 'account_box',
-        title: 'Users',
+        title: 'menu.user',
         active: true,
         items: [
-          { title: 'Drivers', action: 'drivers' },
-          { title: 'Shops', action: 'shops' },
-          { title: 'Admins', action: 'admins' }
+          { title: 'menu.driver', action: 'drivers' },
+          { title: 'menu.shop', action: 'shops' },
+          { title: 'menu.admin', action: 'admins' }
         ]
       }
     ]
