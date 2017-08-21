@@ -9,8 +9,12 @@ import('#/vuetify/dist/vuetify.min.css')
 import Vuetify from 'vuetify'
 Vue.use(Vuetify)
 
-import VeeValidate from 'vee-validate'
-Vue.use(VeeValidate)
+import vi from '#/vee-validate/dist/locale/vi.js'
+import VeeValidate, { Validator } from 'vee-validate'
+Validator.addLocale(vi)
+Vue.use(VeeValidate, {
+  locale: 'vi'
+})
 
 Vue.config.productionTip = false
 
