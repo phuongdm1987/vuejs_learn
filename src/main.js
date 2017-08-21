@@ -5,6 +5,8 @@ import App from './App'
 import router from './router'
 import store from './store'
 import ls from 'local-storage'
+// config i18n
+import i18n from './lang'
 
 import('#/vuetify/dist/vuetify.min.css')
 import Vuetify from 'vuetify'
@@ -25,6 +27,7 @@ new Vue({
   el: '#app',
   router,
   store,
+  i18n,
   template: '<App/>',
   components: { App }
 })

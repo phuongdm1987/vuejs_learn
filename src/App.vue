@@ -29,6 +29,11 @@
             </v-list-tile-content>
           </v-list-tile>
         </v-list-group>
+        <v-list-tile router-link to="/logout">
+          <v-list-tile-content>
+            <v-list-tile-title>Logout</v-list-tile-title>
+          </v-list-tile-content>
+        </v-list-tile>
       </v-list>
     </v-navigation-drawer>
     <v-toolbar class="cyan" dark>
@@ -46,16 +51,17 @@
         <router-view></router-view>
       </v-container>
     </main>
-    <v-footer class="cyan">
+    <v-footer class="cyan" dark>
       <v-spacer></v-spacer>
-      <div dark>© {{ new Date().getFullYear() }}</div>
+      <div>© {{ new Date().getFullYear() }}</div>
     </v-footer>
   </v-app>
 </template>
 
 <script>
 import ls from 'local-storage'
-import { mapGetters } from 'vuex'
+import i18n from './lang'
+import { mapGetters, mapActions } from 'vuex'
 export default {
   name: 'app',
   data: () => ({
@@ -81,8 +87,16 @@ export default {
   computed: {
     ...mapGetters(['isLogged'])
   },
+  methods: {
+    ...mapActions(['checkLogged'])
+  },
+  mounted () {
+    this.checkLogged()
+  },
   watch: {
     language () {
+      i18n.locale = this.language
+      this.$validator.setLocale(this.language)
       ls.set('lang', this.language)
     }
   }

@@ -7,6 +7,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import ls from 'local-storage'
 import createLogger from 'vuex/dist/logger'
+import router from '@/router'
 
 /**
  * -----------------------------------------------------------------------------------------------------------
@@ -36,6 +37,13 @@ const store = new Vuex.Store({
     logout ({commit}) {
       ls.remove('authen')
       commit('setLogout')
+    },
+    checkLogged ({commit}) {
+      if (ls.get('authen')) {
+        commit('setLogged')
+      } else {
+        router.push('/login')
+      }
     }
   },
   mutations: {

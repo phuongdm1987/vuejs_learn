@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Dashboard from '@/components/Dashboard'
 import Login from '@/components/account/Login'
+import Logout from '@/components/account/Logout'
 import auth from './auth'
 
 // configs axios
@@ -16,6 +17,12 @@ export default new Router({
       path: '/',
       name: 'Dashboard',
       component: Dashboard,
+      beforeEnter: auth.requireAuth
+    },
+    {
+      path: '/logout',
+      name: 'Logout',
+      component: Logout,
       beforeEnter: auth.requireAuth
     },
     {
