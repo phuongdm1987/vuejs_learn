@@ -38,6 +38,8 @@
       <v-toolbar-title>
         Learn Vuejs
       </v-toolbar-title>
+      <v-spacer></v-spacer>
+      <v-btn-toggle v-bind:items="language_options" v-model="language"></v-btn-toggle>
     </v-toolbar>
     <main>
       <v-container fluid>
@@ -52,11 +54,17 @@
 </template>
 
 <script>
+import ls from 'local-storage'
 import { mapGetters } from 'vuex'
 export default {
   name: 'app',
   data: () => ({
     drawer: true,
+    language_options: [
+      {text: 'VI', value: 'vi'},
+      {text: 'EN', value: 'en'}
+    ],
+    language: ls.get('lang') || 'vi',
     items: [
       {
         action: 'account_box',
@@ -72,6 +80,11 @@ export default {
   }),
   computed: {
     ...mapGetters(['isLogged'])
+  },
+  watch: {
+    language () {
+      ls.set('lang', this.language)
+    }
   }
 }
 </script>
