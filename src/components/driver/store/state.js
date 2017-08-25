@@ -1,3 +1,3 @@
 export default {
-  drivers: null
+  drivers: []
 }

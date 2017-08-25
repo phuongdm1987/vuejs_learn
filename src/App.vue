@@ -72,7 +72,7 @@
     <!-- footer -->
     <v-footer class="cyan" dark>
       <v-spacer></v-spacer>
-      <div>Henry © {{ new Date().getFullYear() }}</div>
+      <div class="white--text">Henry © {{ new Date().getFullYear() }}</div>
     </v-footer>
   </v-app>
 </template>
@@ -94,7 +94,6 @@ export default {
       {
         action: 'account_box',
         title: 'menu.user',
-        active: true,
         items: [
           { title: 'menu.driver', action: 'drivers' },
           { title: 'menu.shop', action: 'shops' },

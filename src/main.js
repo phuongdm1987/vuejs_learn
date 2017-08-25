@@ -7,6 +7,8 @@ import store from './store'
 import ls from 'local-storage'
 // config i18n
 import i18n from './lang'
+// filter
+import * as filters from './filters'
 
 import('#/vuetify/dist/vuetify.min.css')
 import Vuetify from 'vuetify'
@@ -21,6 +23,11 @@ Vue.use(VeeValidate, {
 })
 
 Vue.config.productionTip = false
+
+// custom filters
+Object.keys(filters).forEach(key => {
+  Vue.filter(key, filters[key])
+})
 
 /* eslint-disable no-new */
 new Vue({
