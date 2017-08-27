@@ -9,12 +9,16 @@
         single-line
         hide-details
         v-model="search"
+        v-on:input="debounceInput"
       ></v-text-field>
     </v-card-title>
     <v-data-table
-      v-bind:headers="headers"
-      v-bind:items="drivers"
-      v-bind:search="search"
+      :headers="headers"
+      :items="drivers.data"
+      :search="filter"
+      :pagination.sync="pagination"
+      :total-items="totalItems"
+      :loading="loading"
     >
       <template slot="items" scope="props">
         <span v-tooltip:bottom="{ 'html': props.header.text }">
@@ -80,12 +84,21 @@
 
 <script>
 import { mapActions, mapGetters } from 'vuex'
+import * as _ from 'lodash'
 export default {
   name: 'drivers',
   data () {
     return {
       search: '',
+      filter: '',
+      totalItems: 0,
       loading: true,
+      pagination: {
+        page: 1,
+        rowsPerPage: 5,
+        descending: false,
+        totalItems: 0
+      },
       headers: [
         {
           text: 'Drivers listing',
@@ -105,14 +118,44 @@ export default {
     ...mapGetters('driver', ['drivers'])
   },
   methods: {
-    ...mapActions('driver', ['getDrivers'])
+    ...mapActions('driver', ['getDrivers']),
+    debounceInput: _.debounce(function () {
+      this.filter = this.search
+    }, 500)
+    // pagination: {
+    //   handler () {
+    //     this.loading = true
+    //     this.getDrivers({page: this.pagination.page, limit: this.pagination.rowsPerPage})
+    //     this.loading = false
+    //   },
+    //   deep: false
+    // }
+  },
+  watch: {
+    drivers () {
+      this.pagination.totalItems = this.drivers.meta.pagination.total
+      this.totalItems = this.drivers.meta.pagination.total
+    },
+    filter (filter) {
+      this.loading = true
+      this.getDrivers({page: this.pagination.page, limit: this.pagination.rowsPerPage, q: filter})
+      this.loading = false
+    },
+    pagination: {
+      handler () {
+        this.loading = true
+        this.getDrivers({page: this.pagination.page, limit: this.pagination.rowsPerPage, q: this.filter})
+        this.loading = false
+      },
+      deep: false
+    }
   },
   mounted () {
-    if (this.drivers.length <= 0) {
-      this.loading = true
-      this.getDrivers()
-      this.loading = false
-    }
+    // if (this.drivers.length <= 0) {
+    //   this.loading = true
+    //   this.getDrivers({page: this.pagination.page, limit: this.pagination.rowsPerPage})
+    //   this.loading = false
+    // }
   }
 }
 </script>

@@ -6,7 +6,7 @@ import {
 const getDrivers = ({commit, dispatch}, params = {}) => {
   drivers.getDrivers(params).then(response => {
     if (response.status === 200) {
-      commit(GET_DRIVERS, response.data.data)
+      commit(GET_DRIVERS, response.data)
     }
   })
 }
