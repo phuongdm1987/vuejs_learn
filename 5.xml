@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<campaign>
+    <adverts>
+        <advert>
+            <title>Xà Đơn Đa Năng P90X test</title>
+            <url>
+                https://www.thethaodaiviet.vn/xa-don-da-nang-p90x.html
+            </url>
+            <image>
+                https://www.thethaodaiviet.vn/images/201407/source_img/xa-don-da-nang-p90x-p5411404960384075.jpg
+            </image>
+            <keywords>
+                <keyword>
+                    <phrase>xà đơn P90X -hanoi</phrase>
+                    <bid>3699</bid>
+                </keyword>
+                <keyword>
+                    <phrase>p90X</phrase>
+                    <bid>2500</bid>
+                </keyword>
+                <keyword>
+                    <phrase>xà đơn đa năng</phrase>
+                    <bid>2500</bid>
+                </keyword>
+                <keyword>
+                    <phrase>xà đơn treo tường</phrase>
+                    <bid>2500</bid>
+                </keyword>
+                <keyword>
+                    <phrase>xà đơn gắn tường</phrase>
+                    <bid>2500</bid>
+                </keyword>
+                <keyword>
+                    <phrase>xà đơn trong nhà</phrase>
+                    <bid>2500</bid>
+                </keyword>
+                <keyword>
+                    <phrase>xà đơn đa năng P90X</phrase>
+                    <bid>2500</bid>
+                </keyword>
+            </keywords>
+            <price>690000</price>
+            <sale-price>650000</sale-price>
+            <shop>
+                <name>Thể thao đại việt</name>
+                <url>https://www.thethaodaiviet.vn/</url>
+            </shop>
+            <regions>
+                <region>1</region>
+                <region>2</region>
+            </regions>
+        </advert>
+        <advert>
+            <title>Ghế cong tập bụng Xuki có càng test 1</title>
+            <url>
+                https://www.thethaodaiviet.vn/ghe-cong-tap-bung-xuki-co-cang.html
+            </url>
+            <image>
+                https://www.thethaodaiviet.vn/images/201401/source_img/ghe-cong-tap-bung-xuki-co-cang-p1851389386156014.jpg
+            </image>
+            <keywords>
+                <keyword>
+                    <phrase>[Ghế cong tập bụng Xuki có càng]</phrase>
+                    <bid>20000</bid>
+                </keyword>
+                <keyword>
+                    <phrase>ghế cong tập bụng</phrase>
+                    <bid>2500</bid>
+                </keyword>
+            </keywords>
+            <price>550000</price>
+            <sale-price>47000</sale-price>
+            <shop>
+                <name>Thể thao đại việt</name>
+                <url>https://www.thethaodaiviet.vn/</url>
+            </shop>
+        </advert>
+        <advert>
+            <title>Máy tập cơ bụng tổng hợp Six Pack Care</title>
+            <url>
+                https://www.thethaodaiviet.vn/may-tap-co-bung-tong-hop-six-pack-care.html
+            </url>
+            <image>
+                https://www.thethaodaiviet.vn/images/201507/source_img/may-tap-co-bung-tong-hop-six-pack-care-p1991438256063057.JPG
+            </image>
+            <keywords>
+                <keyword>
+                    <phrase>Máy tập cơ bụng tổng hợp Six Pack Care</phrase>
+                    <bid>2500</bid>
+                </keyword>
+                <keyword>
+                    <phrase>may tap cơ bung six pack</phrase>
+                    <bid>2500</bid>
+                </keyword>
+            </keywords>
+            <sale-price>470000</sale-price>
+            <price>136000</price>
+            <shop>
+                <name>Thể thao đại việt</name>
+                <url>https://www.thethaodaiviet.vn/</url>
+            </shop>
+        </advert>
+        <advert>
+            <title>Giàn tạ đa năng Xuki test feed</title>
+            <url>
+                https://hong.vn
+            </url>
+            <image>
+                https://www.thethaodaiviet.vn/images/upload/Image/gian-ta-da-nang-xuki-1435201676029.jpg
+            </image>
+            <keywords>
+                <keyword>
+                    <phrase>Giàn tạ đa năng Xu Ki</phrase>
+                    <bid>2500</bid>
+                </keyword>
+                <keyword>
+                    <phrase>giàn tạ</phrase>
+                    <bid>2500</bid>
+                </keyword>
+                <keyword>
+                    <phrase>gian tạ tại nhà</phrase>
+                    <bid>2500</bid>
+                </keyword>
+            </keywords>
+            <price>1600000</price>
+            <shop>
+                <name>Thể thao đại việt</name>
+                <url>https://www.thethaodaiviet.vn/</url>
+            </shop>
+        </advert>
+        <advert>
+            <title>HongTest Feed1</title>
+            <url>
+                http://staging-1-qc.coccoc.com/12834/quang-cao
+            </url>
+            <image>
+                https://www.thethaodaiviet.vn/images/201807/source_img/ghe-massage-okasa-os-568-hot-nhat-2018-p13061532649781096.jpg
+            </image>
+            <keywords>
+                <keyword>
+                    <phrase>New Six Pack Care</phrase>
+                    <bid>2500</bid>
+                </keyword>
+                <keyword>
+                    <phrase>máy tập bụng ne</phrase>
+                    <bid>2500</bid>
+                </keyword>
+                <keyword>
+                    <phrase>máy tập bụng cho bạn</phrase>
+                    <bid>2500</bid>
+                </keyword>
+                <keyword>
+                    <phrase>máy tập new Six Pack Care</phrase>
+                    <bid>2500</bid>
+                </keyword>
+                <keyword>
+                    <phrase>máy tập cơ bụng tại nhà</phrase>
+                    <bid>100</bid>
+                </keyword>
+            </keywords>
+            <price>16500000</price>
+            <sale-price>1350000</sale-price>
+            <shop>
+                <name>Thể thao đại việt</name>
+                <url>https://www.thethaodaiviet.vn/</url>
+            </shop>
+        </advert>
+    </adverts>
+</campaign>
